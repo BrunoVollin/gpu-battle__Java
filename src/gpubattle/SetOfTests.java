@@ -11,14 +11,19 @@ import java.util.ArrayList;
  *
  * @author bruno
  */
-public class Test {
-    
-    private int fps;
-    
-    Pc pc; 
-    //Game[]game = new Game[5];
-    Game game;
-   
+public class SetOfTests {
+    private int fps = 0;
+    ArrayList<Test> tests;
+    Pc pc;
+
+    public SetOfTests(ArrayList<Test> tests) {
+        this.tests = tests;
+        
+        for(Test test : tests) {
+            this.fps += test.getFps();
+        }
+        System.out.println("Fps:"  + fps);
+    }
 
     public int getFps() {
         return fps;
@@ -27,8 +32,7 @@ public class Test {
     public void setFps(int fps) {
         this.fps = fps;
     }
-
     
     
-   
+    
 }

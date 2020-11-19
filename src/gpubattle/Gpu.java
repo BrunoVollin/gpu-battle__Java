@@ -11,7 +11,7 @@ package gpubattle;
  */
 public class Gpu extends Hardware{
     private String madeBy; //Nvidea, AMD
-    private String vRam; // Nvidea
+    private float vRam; // Nvidea
 
     public String getMadeBy() {
         return madeBy;
@@ -21,11 +21,11 @@ public class Gpu extends Hardware{
         this.madeBy = madeBy;
     }
 
-    public String getvRam() {
+    public float getvRam() {
         return vRam;
     }
 
-    public void setvRam(String vRam) {
+    public void setvRam(float vRam) {
         this.vRam = vRam;
     }
     

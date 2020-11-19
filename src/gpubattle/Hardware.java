@@ -12,9 +12,9 @@ package gpubattle;
 public abstract class Hardware {
     private String name; //GTX 3090
     private String brand; // Zotac, Asus, Evga
-    private String Clock; 
+    private float Clock; 
     private float cost;
-    private String memory;
+    private float memory;
 
     public String getName() {
         return name;
@@ -32,11 +32,11 @@ public abstract class Hardware {
         this.brand = brand;
     }
 
-    public String getClock() {
+    public float getClock() {
         return Clock;
     }
 
-    public void setClock(String Clock) {
+    public void setClock(float Clock) {
         this.Clock = Clock;
     }
 
@@ -48,11 +48,11 @@ public abstract class Hardware {
         this.cost = cost;
     }
 
-    public String getMemory() {
+    public float getMemory() {
         return memory;
     }
 
-    public void setMemory(String memory) {
+    public void setMemory(float memory) {
         this.memory = memory;
     }
     

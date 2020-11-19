@@ -10,22 +10,22 @@ package gpubattle;
  * @author bruno
  */
 public class Cpu extends Hardware{
-    private String cores; //4 cores
-    private String threads; //8 Threads
+    private int cores; //4 cores
+    private int threads; //8 Threads
 
-    public String getCores() {
+    public int getCores() {
         return cores;
     }
 
-    public void setCores(String cores) {
+    public void setCores(int cores) {
         this.cores = cores;
     }
 
-    public String getThreads() {
+    public int getThreads() {
         return threads;
     }
 
-    public void setThreads(String threads) {
+    public void setThreads(int threads) {
         this.threads = threads;
     }
     
