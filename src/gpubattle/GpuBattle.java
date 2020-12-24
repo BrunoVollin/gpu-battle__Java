@@ -5,13 +5,17 @@
  */
 package gpubattle;
 
-import gpubattle.model.Comparation;
-import gpubattle.model.Cpu;
-import gpubattle.model.Game;
-import gpubattle.model.Gpu;
-import gpubattle.model.Pc;
-import gpubattle.model.SetTests;
-import gpubattle.model.Test;
+import gpubattle.DAO.CpuDAO;
+import gpubattle.DAO.GpuDAO;
+import gpubattle.DAO.PcDAO;
+import gpubattle.DAO.TestDAO;
+import Model.Cpu;
+import Model.Game;
+import Model.Gpu;
+import Model.Pc;
+import Model.Test;
+import View.Login;
+import gpubattle.DAO.GameDAO;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
@@ -24,127 +28,84 @@ public class GpuBattle {
 
     /**
      * @param args the command line arguments
-     */     
+     */
     public static void main(String[] args) {
-        
-        Test t1 = new Test();
-        
-        //TEST.GAME
-        Game game1 = new Game();
-        game1.setName("MineCraft");
-        game1.setDeveloper("Mojang");
-        t1.game = game1;
-        
-        //TESTE.FPS
-        t1.setFps(200);
-        
-        //TESTE.PC
-        Pc pc1 = new Pc();
-        
-        //TESTE.PC.GPU
+
+        /*
+        -----------------------------------------------------------------------
+        ----------------------------- TESTE 1 --------------------------------- 
+        -----------------------------------------------------------------------
+         */
+ /*
+        -----------------------------------------------------------------------
+        ----------------------------- TESTE 2 --------------------------------- 
+        -----------------------------------------------------------------------
+         */
+ /*
+        -----------------------------------------------------------------------
+        ----------------------------- COMPARAÇÃO 1 ----------------------------
+        -----------------------------------------------------------------------
+         */
+ /*
+        -----------------------------------------------------------------------
+        -------------------------- INSERINDO NO BD ----------------------------
+        -----------------------------------------------------------------------
+         */
+         /*
+        //----------Gpu----------//
         Gpu gpu1 = new Gpu();
-        
-        gpu1.setName("1080 ti");
-        gpu1.setBrand("NVIDEA");
-        gpu1.setClock(3.0f);
-        gpu1.setCost(500f);
-        gpu1.setMemory(18);
-        
-        gpu1.setMadeBy("ASUS");
-        gpu1.setvRam(8f);
-        pc1.gpu = gpu1;
-        
-        //TESTE.PC.CPU
+        gpu1.name = "1060";
+        gpu1.brand = "Nvidea";
+        gpu1.cost = 600;
+
+        //----------Cpu----------//
         Cpu cpu1 = new Cpu();
+        cpu1.name = "i5 9400";
+        cpu1.brand = "Intel";
+        cpu1.cost = 600;
+
+        //----------Pc----------//
+        Pc pc1 = new Pc(cpu1, gpu1);
+
+        //----------Game----------//
+        Game game1 = new Game();
+        game1.name = "Mine Craft";
+        game1.nameDeveloper = "Ubsoft";
+        game1.cityDeveloper = "Montreuil, Ilha de França.";
+
+        //----------Test----------//
+        Test t1 = new Test();
+        t1.fps = 100;
+        t1.game = game1;
+        t1.pc = pc1;
+
+        //--------BatteryTests-------//
+        ArrayList<Test> tests = new ArrayList<>();
+        BatteryTests bt = new BatteryTests(tests, pc1);
+
+        GameDAO gameDAO = new GameDAO();
+        CpuDAO cpuDAO = new CpuDAO();
+        GpuDAO gpuDAO = new GpuDAO();
+        PcDAO pcDAO = new PcDAO();
+        TestDAO testDAO = new TestDAO();
+
+        cpuDAO.inserirCpu(cpu1);
+        gpuDAO.inserirGpu(gpu1);
+        pcDAO.inserirPc(pc1);
+        gameDAO.inserirGame(game1);
+        testDAO.inserirTest(t1);
         
-        cpu1.setName("i5 7400");
-        cpu1.setBrand("Intel");
-        cpu1.setClock(3.0f);
-        cpu1.setCost(500f);
-        cpu1.setMemory(1);
-        
-        cpu1.setCores(4);
-        cpu1.setThreads(8);
-        pc1.cpu = cpu1;
-        
-        
-        t1.setFps(100);
-        
-        //BATERIA
-        ArrayList<Test> tests = new ArrayList<Test>();
-        tests.add(t1);
-        SetTests set1 = new SetTests(tests, pc1);
-        
-        
-        //-----------------PC2-------------------//
-        
-        Test t2 = new Test();
-        
-        //TEST.GAME
-        Game game2 = new Game();
-        game2.setName("MineCraft");
-        game2.setDeveloper("Mojang");
-        t2.game = game2;
-        
-        //TESTE.FPS
-        t2.setFps(200);
-        
-        //TESTE.PC
-        Pc pc2 = new Pc();
-        
-        //TESTE.PC.GPU
-        Gpu gpu2 = new Gpu();
-        
-        gpu2.setName("1080 ti");
-        gpu2.setBrand("NVIDEA");
-        gpu2.setClock(3.5f);
-        gpu2.setCost(400f);
-        gpu2.setMemory(11);
-        
-        gpu2.setMadeBy("ASUS");
-        gpu2.setvRam(20f);
-        pc2.gpu = gpu2;
-        
-        //TESTE.PC.CPU
-        Cpu cpu2 = new Cpu();
-        
-        cpu2.setName("i5 7400");
-        cpu2.setBrand("Intel");
-        cpu2.setClock(4.0f);
-        cpu2.setCost(450f);
-        cpu2.setMemory(22);
-        
-        cpu2.setCores(3);
-        cpu2.setThreads(6);
-        pc2.cpu = cpu2;
-        
-        
-        t2.setFps(200);
-        
-        //BATERIA
-        ArrayList<Test> tests2 = new ArrayList<Test>();
-        tests2.add(t2);
-        SetTests set2 = new SetTests(tests, pc2);
-        
-        
-        //COMPARATION
-        
-        Comparation comp = new Comparation(set1, set2);
-        
-        
-        
-   
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    }
+        //System.out.println(testDAO.getIdGameForTest(test1));
+//        System.out.println(pcDAO.getIdCpuForPc(pc1));
+//        ArrayList<Pc> PcList = pcDAO.SelectAllPc();
+//        for (int i = 0; i < PcList.size(); i++) {
+//            System.out.println(PcList.get(i).name);
+//        }
+
     
+         */
+       Login login = new Login();
+       login.setVisible(true);
+    }
+
 }

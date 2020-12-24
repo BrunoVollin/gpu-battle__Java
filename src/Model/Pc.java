@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gpubattle.model;
+package Model;
 
 import gpubattle.*;
 
@@ -12,13 +12,27 @@ import gpubattle.*;
  * @author bruno
  */
 public class Pc {
-    private float cost;
+
+    public float cost;
     public Cpu cpu = new Cpu();
-    public Gpu gpu = new Gpu();   
+    public Gpu gpu = new Gpu();
+    public String name;
+
+    public int idPc = 0;
+    
+
+    public Pc(Cpu cpu, Gpu gpu) {
+        this.cpu = cpu;
+        this.gpu = gpu;
+        this.cost = cpu.cost + gpu.cost;
+        this.name = gpu.name + ", " + cpu.name;
+    }
 
     public Pc() {
-        this.cost = cpu.getCost() + gpu.getCost();
+        
     }
+
+    
 
     public float getCost() {
         return cost;
@@ -27,6 +41,5 @@ public class Pc {
     public void setCost(float cost) {
         this.cost = cost;
     }
-    
-    
+
 }
