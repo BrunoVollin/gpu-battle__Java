@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gpubattle;
+package Model;
 
+import gpubattle.*;
 import java.util.ArrayList;
 
 /**
@@ -12,12 +13,11 @@ import java.util.ArrayList;
  * @author bruno
  */
 public class Test {
-    
-    private int fps;
-    
-    Pc pc; 
-    //Game[]game = new Game[5];
-    Game game;
+    public String name;
+    public int idTest = 0;
+    public int fps;   
+    public Game game;
+    public Pc pc;
    
 
     public int getFps() {
